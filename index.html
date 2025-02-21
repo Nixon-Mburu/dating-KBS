@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Opposites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a5b4fc, #6366f1);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        h1 {
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 60px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        label i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            outline: none;
+        }
+        
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        
+        .hobbies-list, .love-languages-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        .hobby-item, .love-language-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .hobby-item:hover, .love-language-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        .hobby-checkbox, .love-language-radio {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gray);
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .hobby-checkbox {
+            border-radius: 5px;
+        }
+        
+        .love-language-radio {
+            border-radius: 50%;
+        }
+        
+        .hobby-checkbox:checked, .love-language-radio:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .hobby-checkbox:checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .love-language-radio:checked::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .match-animation {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .tooltip {
+            display: inline-block;
+            position: relative;
+            margin-left: 0.5rem;
+            cursor: help;
+        }
+        
+        .tooltip-icon {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+        
+        .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            border-radius: 6px;
+            padding: 0.75rem;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            font-weight: normal;
+        }
+        
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--dark) transparent transparent transparent;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Solar Opposites</h1>
+            <form id="userForm" action="{{ url_for('match') }}" method="POST">
+
+                <div class="form-grid">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i>Enter your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    
+                    <!-- Gender Field -->
+                    <div class="form-group">
+                        <label for="gender"><i class="fas fa-venus-mars"></i>Pick your Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected>Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-grid">
+                    <!-- Age Field -->
+                    <div class="form-group">
+                        <label for="age"><i class="fas fa-birthday-cake"></i>Select your Age</label>
+                        <input type="number" id="age" name="age" required min="18" max="100" placeholder="Your age">
+                    </div>
+                    
+                    <!-- Location Field -->
+                    <div class="form-group">
+                        <label for="location"><i class="fas fa-map-marker-alt"></i>Enter your Location</label>
+                        <input type="text" id="location" name="location" required placeholder="City, Country">
+                    </div>
+                </div>
+                
+                <!-- Love Languages Field -->
+                <div class="form-group">
+                    <label>
+                        <i class="fas fa-heart"></i>Your Primary Love Language
+                        <span class="tooltip">
+                            <i class="fas fa-question-circle tooltip-icon"></i>
+                            <span class="tooltip-text">Love languages are how people express and experience love. Select the one that resonates most with you.</span>
+                        </span>
+                    </label>
+                    <div class="love-languages-list">
+                        <label class="love-language-item">
+                            <input type="radio" name="loveLanguage" value="words_of_affirmation" class="love-language-radio" required>
+                            <span>Words of Affirmation</span>
+                        </label>
+                        <label class="love-language-item">
+                            <input type="radio" name="loveLanguage" value="acts_of_service" class="love-language-radio">
+                            <span>Acts of Service</span>
+                        </label>
+                        <label class="love-language-item">
+                            <input type="radio" name="loveLanguage" value="receiving_gifts" class="love-language-radio">
+                            <span>Receiving Gifts</span>
+                        </label>
+                        <label class="love-language-item">
+                            <input type="radio" name="loveLanguage" value="quality_time" class="love-language-radio">
+                            <span>Quality Time</span>
+                        </label>
+                        <label class="love-language-item">
+                            <input type="radio" name="loveLanguage" value="physical_touch" class="love-language-radio">
+                            <span>Physical Touch</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Hobbies Field -->
+                <div class="form-group">
+                    <label><i class="fas fa-bicycle"></i>Pick Your Hobbies</label>
+                    <div class="hobbies-list">
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Hiking" class="hobby-checkbox">
+                            <span>Hiking</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Painting" class="hobby-checkbox">
+                            <span>Painting</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Watching Movies" class="hobby-checkbox">
+                            <span>Watching Movies</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Travelling" class="hobby-checkbox">
+                            <span>Travelling</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Reading Novels" class="hobby-checkbox">
+                            <span>Reading Novels</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Gaming" class="hobby-checkbox">
+                            <span>Gaming</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Cooking" class="hobby-checkbox">
+                            <span>Cooking</span>
+                        </label>
+                        <label class="hobby-item">
+                            <input type="checkbox" name="hobbies" value="Photography" class="hobby-checkbox">
+                            <span>Photography</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="btn">
+                    <i class="fas fa-search"></i> Find a Match
+                </button>
+                
+                <div id="matchAnimation" class="match-animation">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--primary);"></i>
+                    <p>Finding your perfect Solar opposite...</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

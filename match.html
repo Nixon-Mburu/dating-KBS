@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Opposites - Match</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a5b4fc, #6366f1);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+        }
+
+        h1 {
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 60px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .match-list {
+            margin-top: 2rem;
+        }
+
+        .match-item {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match-score {
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .match-details p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Matches</h1>
+        <div class="match-list">
+            {% if matches %}
+                {% for match in matches %}
+                    <div class="match-item">
+                        <div class="match-header">
+                            <h3>{{ match.name }}</h3>
+                            <span class="match-score">{{ (match.score * 100)|round|int }}% Match</span>
+                        </div>
+                        <div class="match-details">
+                            <p><i class="fas fa-user"></i> {{ match.age }} years old</p>
+                            <p><i class="fas fa-map-marker-alt"></i> {{ match.location }}</p>
+                            <p><i class="fas fa-heart"></i> {{ match.love_language|replace('_', ' ')|title }}</p>
+                            <p><i class="fas fa-bicycle"></i> Hobbies: {{ match.hobbies|join(', ') }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No matches found. Try adjusting your preferences!</p>
+            {% endif %}
+        </div>
+        <button class="btn" onclick="window.location.href='/'">Back to Profile</button>
+    </div>
+</body>
+
+</html>

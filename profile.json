@@ -1,0 +1,268 @@
+{
+    "profiles": [
+        {
+            "name": "Jane Smith",
+            "gender": "female",
+            "age": 24,
+            "location": "Nairobi",
+            "love_language": "acts_of_service",
+            "interests": ["Painting", "Photography", "Hiking"]
+        },
+        {
+            "name": "Sarah Williams",
+            "gender": "female",
+            "age": 23,
+            "location": "Nairobi",
+            "love_language": "quality_time",
+            "interests": ["Gaming", "Reading Novels", "Watching Movies"]
+        },
+        {
+            "name": "Emily Davis",
+            "gender": "female",
+            "age": 25,
+            "location": "Mombasa",
+            "love_language": "words_of_affirmation",
+            "interests": ["Travelling", "Cooking", "Photography"]
+        },
+        {
+            "name": "Joan Mwenda",
+            "age": 25,
+            "gender": "female",
+            "interests": ["travelling", "working out", "watching movies"],
+            "location": "Nairobi",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Ryan Kamau",
+            "age": 28,
+            "gender": "male",
+            "interests": ["reading", "listening to music", "gaming"],
+            "location": "Mombasa",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "Sharleen Wambui",
+            "age": 22,
+            "gender": "female",
+            "interests": ["travelling", "gaming"],
+            "location": "Kisumu",
+            "love_language": "receiving_gifts"
+        },
+        {
+            "name": "Moses Mwai",
+            "age": 30,
+            "gender": "male",
+            "interests": ["working out", "watching movies"],
+            "location": "Nakuru",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Catherine Wairimu",
+            "age": 24,
+            "gender": "female",
+            "interests": ["reading", "listening to music"],
+            "location": "Eldoret",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Onesmus Wanyonyi",
+            "age": 27,
+            "gender": "male",
+            "interests": ["travelling", "working out"],
+            "location": "Nairobi",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Joy Atieno",
+            "age": 29,
+            "gender": "female",
+            "interests": ["gaming", "watching movies"],
+            "location": "Mombasa",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "Abdi Mohammed",
+            "age": 26,
+            "gender": "male",
+            "interests": ["reading", "listening to music"],
+            "location": "Kisumu",
+            "love_language": "receiving_gifts"
+        },
+        {
+            "name": "Aisha Hassan",
+            "age": 23,
+            "gender": "female",
+            "interests": ["travelling", "working out"],
+            "location": "Nakuru",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Daniel Okoth",
+            "age": 31,
+            "gender": "male",
+            "interests": ["gaming", "watching movies"],
+            "location": "Eldoret",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Lydia Maina",
+            "age": 25,
+            "gender": "female",
+            "interests": ["travelling", "working out", "watching movies"],
+            "location": "Nairobi",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Brian Ochieng",
+            "age": 28,
+            "gender": "male",
+            "interests": ["reading", "listening to music", "gaming"],
+            "location": "Mombasa",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "Lilian Kioko",
+            "age": 22,
+            "gender": "female",
+            "interests": ["travelling", "gaming"],
+            "location": "Kisumu",
+            "love_language": "receiving_gifts"
+        },
+        {
+            "name": "Kelvin Ouma",
+            "age": 30,
+            "gender": "male",
+            "interests": ["working out", "watching movies"],
+            "location": "Nakuru",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Catherine Wanjiku",
+            "age": 24,
+            "gender": "female",
+            "interests": ["reading", "listening to music"],
+            "location": "Eldoret",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Alex Omar",
+            "age": 27,
+            "gender": "male",
+            "interests": ["travelling", "working out"],
+            "location": "Nairobi",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Esther Hassan",
+            "age": 29,
+            "gender": "female",
+            "interests": ["gaming", "watching movies"],
+            "location": "Mombasa",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "Joshua Njoroge",
+            "age": 26,
+            "gender": "male",
+            "interests": ["reading", "listening to music"],
+            "location": "Kisumu",
+            "love_language": "receiving_gifts"
+        },
+        {
+            "name": "Ruth Langat",
+            "age": 23,
+            "gender": "female",
+            "interests": ["travelling", "working out"],
+            "location": "Nakuru",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Peter Wachira",
+            "age": 31,
+            "gender": "male",
+            "interests": ["gaming", "watching movies"],
+            "location": "Eldoret",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Grace Njeri",
+            "age": 26,
+            "gender": "female",
+            "interests": ["cooking", "hiking", "photography"],
+            "location": "Nairobi",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Michael Kimani",
+            "age": 29,
+            "gender": "male",
+            "interests": ["football", "chess", "documentaries"],
+            "location": "Mombasa",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Mercy Akinyi",
+            "age": 24,
+            "gender": "female",
+            "interests": ["painting", "cycling", "volunteering"],
+            "location": "Kisumu",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "George Muthomi",
+            "age": 32,
+            "gender": "male",
+            "interests": ["swimming", "cooking", "reading"],
+            "location": "Nakuru",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Faith Wanjiru",
+            "age": 27,
+            "gender": "female",
+            "interests": ["yoga", "meditation", "travelling"],
+            "location": "Eldoret",
+            "love_language": "receiving_gifts"
+        },
+        {
+            "name": "Samuel Kiprono",
+            "age": 30,
+            "gender": "male",
+            "interests": ["rugby", "podcasts", "gardening"],
+            "location": "Thika",
+            "love_language": "words_of_affirmation"
+        },
+        {
+            "name": "Elizabeth Chepkoech",
+            "age": 25,
+            "gender": "female",
+            "interests": ["dancing", "baking", "bird watching"],
+            "location": "Nyeri",
+            "love_language": "quality_time"
+        },
+        {
+            "name": "Victor Otieno",
+            "age": 28,
+            "gender": "male",
+            "interests": ["hiking", "photography", "stargazing"],
+            "location": "Machakos",
+            "love_language": "acts_of_service"
+        },
+        {
+            "name": "Tabitha Mugo",
+            "age": 23,
+            "gender": "female",
+            "interests": ["singing", "fashion design", "volunteering"],
+            "location": "Kitale",
+            "love_language": "physical_touch"
+        },
+        {
+            "name": "Edwin Mutai",
+            "age": 31,
+            "gender": "male",
+            "interests": ["basketball", "coding", "philosophy"],
+            "location": "Kericho",
+            "love_language": "receiving_gifts"
+        }
+    ]
+}
